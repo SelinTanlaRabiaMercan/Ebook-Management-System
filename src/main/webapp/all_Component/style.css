@@ -1,0 +1,258 @@
+/*
+	NAVBAR
+*/
+.navbar1 {
+	color: black;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	background-color: white;
+	box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
+	padding: 1rem;
+	display: flex;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 1;
+	
+	
+	
+	
+    border-top-width: 10px;
+    margin-top: 0px;
+    top: 0px;
+    padding-top: 0px;
+    padding-right: 0px;
+    padding-bottom: 0px;
+    padding-left: 0px;
+    height: 75px;
+	
+}
+
+.navbar-left1 {
+	display: flex;
+	align-items: center;
+}
+
+.navbar-right1 {
+	display: flex;
+	align-items: center;
+}
+
+.navbar-link1 {
+	color: black;
+	font-weight: bold;
+	text-decoration: none;
+	margin-right: 1.5rem;
+	transition: color 0.2s ease;
+}
+
+.navbar-link1:hover {
+	color: #BFACE2;
+}
+
+.navbar-search1 {
+	margin-right: 0.5rem;
+	padding: 0.5rem;
+	border: 1px solid #BFACE2;
+	border-radius: 5px;
+}
+
+.navbar-search-btn1 {
+	background-color: #BFACE2;
+	color: white;
+	border: none;
+	border-radius: 5px;
+	padding: 0.5rem;
+	transition: background-color 0.2s ease;
+}
+
+.navbar-search-btn:hover1 {
+	background-color: #BFACE2;
+}
+
+.navbar-button1 {
+	background-color: transparent;
+	color: #BFACE2;
+	font-weight: bold;
+	margin-right: 10px;
+	border-radius: 5px;
+	padding: 0.5rem 1rem;
+	margin-left: 0.5rem;
+	transition: background-color 0.2s ease;
+}
+
+.navbar-button1:hover {
+	background-color: #BFACE2;
+	color: white;
+}
+
+.renk-degistirme {
+	background-color: #BFACE2;
+	color: white;
+	border: none;
+	border-radius: 5px;
+	padding: 10px 20px;
+	font-size: 16px;
+	cursor: pointer;
+}
+
+.renk-degistirme:hover {
+	background-color: white;
+	color: #BFACE2;
+}
+
+/*  
+	CARD
+*/
+.card {
+	border: 1px solid #ccc;
+	box-shadow: 2px 2px #ccc;
+	padding: 20px;
+	width: 250px;
+	display: inline-block;
+	margin: 20px;
+}
+
+.card img {
+	max-width: 100%;
+	height: auto;
+}
+
+.card h3 {
+	font-size: 18px;
+	margin-top: 5px;
+	margin-bottom: 0;
+}
+
+.card p {
+	font-size: 14px;
+	margin-top: 5px;
+	margin-bottom: 10px;
+}
+
+.card .buttons {
+	text-align: right;
+	margin-top: 10px;
+}
+
+.card button {
+	background-color: #BFACE2;
+	color: #fff;
+	border: none;
+	padding: 5px 10px;
+	border-radius: 5px;
+	cursor: pointer;
+	margin-right: 5px;
+}
+
+.card-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.button-container {
+	display: flex;
+	flex-direction: row;
+}
+
+* {
+	font-family: 'Montserrat', sans-serif;
+	color: #2C3333;
+}
+
+.hidden {
+	display: none;
+}
+
+/*
+	FOOTER	
+*/
+/*
+	SIGN UP
+*/
+
+
+
+.containers {
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	background-color: #fff;
+	padding: 40px;
+	border-radius: 10px;
+	box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+}
+
+
+.btns {
+	display: inline-block;
+	background-color: #fff;
+	color: #BFACE2;
+	padding: 10px 20px;
+	font-size: 16px;
+	border-radius: 5px;
+	border: 2px solid #BFACE2;
+	text-align: center;
+	transition: all 0.3s ease;
+	cursor: pointer;
+	margin-top: 20px;
+}
+
+.btns:hover {
+	background-color: #BFACE2;
+	color: #fff;
+}
+
+
+.form-container {
+  box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+  border-radius: 5px;
+  padding: 20px;
+  background-color: #fff;
+  /* diğer CSS kodları */
+}
+
+.form-container h2 {
+  margin-bottom: 10px;
+}
+
+.form-container form {
+  margin-top: 10px;
+  width: 50%;
+  margin: 0 auto;
+}
+
+.form-container input[type="text"],
+.form-container input[type="email"],
+.form-container input[type="tel"],
+.form-container input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.1);
+}
+
+.form-container input[type="checkbox"] {
+  margin-right: 5px;
+}
+
+.form-container button[type="submit"] {
+  background-color: #BFACE2;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.form-container button[type="submit"]:hover {
+  background-color: #fff;
+  color: #BFACE2;
+  transition: 0.3s;
+  box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.1);
+}

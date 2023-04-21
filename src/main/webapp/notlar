@@ -1,0 +1,21 @@
+JSTL, 
+	JSP sayfalarındaki tekrarlayan kod bloklarını azaltmak ve kodun okunabilirliğini artırmak 
+	için tasarlanmıştır.
+	
+	
+	
+HTTP SESSİON : 
+
+Kod, HttpSession httpSession=req.getSession();bir HTTP oturum nesnesi oluşturur ve bunu değişkene 
+atar httpSession. Yöntem, getSession()gelen istekle ilişkili geçerli oturumu döndürür veya geçerli 
+oturum yoksa yeni bir oturum oluşturur. Bu oturum nesnesi, aynı istemciden gelen birden çok istekte 
+bilgi depolamak ve almak için kullanılabilir.
+
+HTTP oturumu, bir web sunucusu ve bir tarayıcı arasındaki bağlantıda kullanılan geçici bir bilgi 
+depolama alanıdır. Web sunucusu, kullanıcıların gezinirken veya bir web sitesinde işlem yaparken 
+kimlik doğrulama, yetkilendirme ve diğer türdeki işlemler için bu oturum bilgisini kullanabilir.
+
+HTTP oturumu, sunucu tarafından oluşturulur ve bir kullanıcının belirli bir web sitesinde ne kadar 
+süre kaldığına dair bilgiyi depolamak için kullanılır. Bu bilgi, kullanıcının sepetindeki ürünler, 
+tercihleri, giriş yapmış olduğu hesap bilgileri gibi bilgileri içerebilir. Bu şekilde, kullanıcı 
+web sitesinden ayrıldığında bile, sonraki ziyaretlerinde kaldığı yerden devam edebilir.
