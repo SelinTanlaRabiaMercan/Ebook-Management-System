@@ -19,3 +19,16 @@ HTTP oturumu, sunucu tarafından oluşturulur ve bir kullanıcının belirli bir
 süre kaldığına dair bilgiyi depolamak için kullanılır. Bu bilgi, kullanıcının sepetindeki ürünler, 
 tercihleri, giriş yapmış olduğu hesap bilgileri gibi bilgileri içerebilir. Bu şekilde, kullanıcı 
 web sitesinden ayrıldığında bile, sonraki ziyaretlerinde kaldığı yerden devam edebilir.
+
+
+
+
+@MultipartConfig,
+
+Java Servlet API'sinde, servlet'in isteklerin multipart/form-data olmasını beklediğini belirten bir 
+ek açıklamadır. Bu, standart form gönderimlerinden farklı bir içerik türü gerektiren dosya yüklemelerini 
+işlerken kullanılır.
+
+Bu ek açıklamayı kullanarak, yüklenebilecek maksimum dosya boyutu, yüklenen dosyaların depolanacağı 
+konum vb. gibi birkaç özellik belirleyebilirsiniz. Bu ek açıklama, dosya yüklemelerini işleyen bir 
+sunucu uygulamasının sınıf düzeyinde kullanılmalıdır.

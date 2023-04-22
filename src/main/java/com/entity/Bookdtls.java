@@ -4,7 +4,7 @@ public class Bookdtls {
 	private int bookId;
 	private String bookname;
 	private String author;
-	private Double price;
+	private String price;
 	private String bookCategory;
 	private String status;
 	private String photo;
@@ -15,10 +15,9 @@ public class Bookdtls {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Bookdtls(int bookId, String bookname, String author, Double price, String bookCategory, String status,
+	public Bookdtls( String bookname, String author, String price, String bookCategory, String status,
 			String photo, String user_email) {
 		super();
-		this.bookId = bookId;
 		this.bookname = bookname;
 		this.author = author;
 		this.price = price;
@@ -52,11 +51,11 @@ public class Bookdtls {
 		this.author = author;
 	}
 
-	public Double getPrice() {
+	public String getPrice() {
 		return price;
 	}
 
-	public void setPrice(Double price) {
+	public void setPrice(String price) {
 		this.price = price;
 	}
 

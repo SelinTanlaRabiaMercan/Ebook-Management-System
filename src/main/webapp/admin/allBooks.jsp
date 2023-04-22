@@ -1,5 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ page import="com.DAL.BookdtlsDALimpl"%>
+<%@ page import="com.DB.DBConnect"%>
+<%@ page import="com.entity.Bookdtls"%>
+<%@ page import="java.util.List"%>
+
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -16,8 +23,8 @@
 		<table class="table">
 			<thead>
 				<tr>
+					<th scope="col">id</th>
 					<th scope="col">#</th>
-					<th scope="col">Book Photo</th>
 					<th scope="col">Book Name</th>
 					<th scope="col">Author Name</th>
 					<th scope="col">Price</th>
@@ -27,110 +34,32 @@
 				</tr>
 			</thead>
 			<tbody>
-				<tr>
-					<th scope="row">1</th>
-					<td></td>
-					<td>The Great Gatsby</td>
-					<td>F. Scott Fitzgerald</td>
-					<td>$12.99</td>
-					<td>Classic Literature</td>
-					<td>In Stock</td>
-					<td>
-						<button type="button" class="btn btn-primary">Edit</button>
-						<button type="button" class="btn btn-danger">Delete</button>
-					</td>
-				</tr>
-				<tr>
-					<th scope="row">2</th>
-					<td></td>
-					<td>1984</td>
-					<td>George Orwell</td>
-					<td>$9.99</td>
-					<td>Dystopian Fiction</td>
-					<td>Out of Stock</td>
-					<td>
-						<button type="button" class="btn btn-primary">Edit</button>
-						<button type="button" class="btn btn-danger">Delete</button>
-					</td>
-				</tr>
-				<tr>
-					<th scope="row">3</th>
-					<td></td>
-					<td>To Kill a Mockingbird</td>
-					<td>Harper Lee</td>
-					<td>$11.99</td>
-					<td>Classic Literature</td>
-					<td>In Stock</td>
-					<td>
-						<button type="button" class="btn btn-primary">Edit</button>
-						<button type="button" class="btn btn-danger">Delete</button>
-					</td>
-				</tr>
-				<tr>
-					<th scope="row">4</th>
-					<td></td>
-					<td>The Catcher in the Rye</td>
-					<td>J.D. Salinger</td>
-					<td>$10.99</td>
-					<td>Coming-of-Age Fiction</td>
-					<td>In Stock</td>
-					<td>
-						<button type="button" class="btn btn-primary">Edit</button>
-						<button type="button" class="btn btn-danger">Delete</button>
-					</td>
-				</tr>
-				<tr>
-					<th scope="row">5</th>
-					<td></td>
-					<td>Pride and Prejudice</td>
-					<td>Jane Austen</td>
-					<td>$8.99</td>
-					<td>Classic Literature</td>
-					<td>Out of Stock</td>
-					<td>
-						<button type="button" class="btn btn-primary">Edit</button>
-						<button type="button" class="btn btn-danger">Delete</button>
-					</td>
-				</tr>
-				<tr>
-					<th scope="row">6</th>
-					<td></td>
-					<td>1984</td>
-					<td>George Orwell</td>
-					<td>14.99</td>
-					<td>Science Fiction</td>
-					<td>Not Available</td>
-					<td>
-						<button type="button" class="btn btn-primary">Edit</button>
-						<button type="button" class="btn btn-danger">Delete</button>
-					</td>
-				</tr>
-				<tr>
-					<th scope="row">7</th>
-					<td></td>
-					<td>Animal Farm</td>
-					<td>George Orwell</td>
-					<td>11.99</td>
-					<td>Science Fiction</td>
-					<td>Available</td>
-					<td>
-						<button type="button" class="btn btn-primary">Edit</button>
-						<button type="button" class="btn btn-danger">Delete</button>
-					</td>
-				</tr>
-				<tr>
-					<th scope="row">8</th>
-					<td></td>
-					<td>Brave New World</td>
-					<td>Aldous Huxley</td>
-					<td>17.99</td>
-					<td>Science Fiction</td>
-					<td>Available</td>
-					<td>
-						<button type="button" class="btn btn-primary">Edit</button>
-						<button type="button" class="btn btn-danger">Delete</button>
-					</td>
-				</tr>
+				<%
+				BookdtlsDALimpl bookdtlsDALimpl = new BookdtlsDALimpl(DBConnect.getConnection());
+				List<Bookdtls> list = bookdtlsDALimpl.getAllBook();
+				for (Bookdtls b : list) {
+				%>
+				<td><%=b.getBookId()%></td>
+				<td><img src="../book/<%=b.getPhoto()%>" style="width: 50 px;height: 50px"></td>
+				<td><%=b.getBookname()%></td>
+				<td><%=b.getAuthor()%></td>
+				<td><%=b.getPrice()%></td>
+				<td><%=b.getBookCategory()%></td>
+				<td><%=b.getStatus()%></td>
+				<td>
+					<button type="button" class="btn btn-primary">Edit</button>
+					<button type="button" class="btn btn-danger">Delete</button>
+				</td>
+				
+				<%
+				}
+				%>
+
+
+
+
+
+
 			</tbody>
 		</table>
 	</div>
