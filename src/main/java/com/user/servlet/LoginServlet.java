@@ -23,20 +23,26 @@ public class LoginServlet extends HttpServlet {
 			userDALimpl daLimpl=new userDALimpl(DBConnect.getConnection());
 
 			HttpSession session=req.getSession();//OTURUM OLUŞTURMAK İÇİN
+			// Login Servlet
+		//	String username = // Kullanıcının adını buradan alınacak
+
 			
 			String email = req.getParameter("email");
 			String pwd = req.getParameter("pwd");
+			
 			
 			System.out.println(email+" "+pwd);
 			
 			if("admin@gmail.com".equals(email) && "12345".equals(pwd)) {
 				User us=new User();
-				session.setAttribute("userobj", us);
-				resp.sendRedirect("admin/Home.jsp");
+				session.setAttribute("email", email);
+			    // Ana sayfaya yönlendir
+				//emaili uzun süre tutmak için
+			    resp.sendRedirect(req.getContextPath() + "/admin/Home.jsp");
+				//resp.sendRedirect("admin/Home.jsp");
 			} else {
 				User user=daLimpl.login(email, pwd);
 				if(user!=null) {
-					session.setAttribute("userobj",user);
 					resp.sendRedirect("Home.jsp");
 				}else {
 					session.setAttribute("failedmesajnouser", "kullanıcı bulunamadı");
@@ -47,7 +53,7 @@ public class LoginServlet extends HttpServlet {
 
 		} catch (Exception e) {
 			e.printStackTrace();
-			System.out.println(e.getMessage());
+			System.out.println("LoginServlette : "+e.getMessage());
 		}
 
 

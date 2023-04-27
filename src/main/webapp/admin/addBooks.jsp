@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>Add Books</title>
 <%@include file="adminAllComponent/allCSS.jsp"%>
 
 </head>
@@ -37,6 +37,7 @@
 								<label for="bookCategory">Book Category:</label> <select
 									id="bookCategory" name="bookCategory" class="form-control">
 									<option value="Novel">Novel</option>
+									<option value="dystopia">Dystopia</option>
 									<option value="Short Story">Short Story</option>
 									<option value="Biography">Biography</option>
 									<option value="Autobiography">Autobiography</option>
@@ -46,7 +47,8 @@
 									<option value="Adventure">Adventure</option>
 									<option value="Mystery">Mystery</option>
 									<option value="Detective">Detective</option>
-									<option value="Science Fiction">Science Fiction</option>
+									<option value="Science_Fiction">Science Fiction</option>
+									<option value="Science">Science</option>
 									<option value="Classic">Classic</option>
 									<option value="Philosophy">Philosophy</option>
 									<option value="Psychology">Psychology</option>

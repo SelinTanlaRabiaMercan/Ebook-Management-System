@@ -32,3 +32,16 @@ işlerken kullanılır.
 Bu ek açıklamayı kullanarak, yüklenebilecek maksimum dosya boyutu, yüklenen dosyaların depolanacağı 
 konum vb. gibi birkaç özellik belirleyebilirsiniz. Bu ek açıklama, dosya yüklemelerini işleyen bir 
 sunucu uygulamasının sınıf düzeyinde kullanılmalıdır.
+
+
+
+DOPOST
+DoPost, HTTP protokolüne ait bir yöntemdir ve sunucuyla istemci arasındaki iletişimde kullanılır.
+
+Web uygulamalarında, bir kullanıcının bir formu doldurup sunucuya göndermesi durumunda, sunucu bu 
+isteği DoPost metodu ile karşılar. İstemcinin gönderdiği veriler, bu metodun parametreleri aracılığıyla 
+sunucuya aktarılır ve işlenir. Bu metodun sonucu olarak, sunucu tarafından bir yanıt oluşturulur ve 
+istemciye gönderilir.
+
+Özetle, DoPost metodu, kullanıcının gönderdiği verileri alarak işleyen ve sonuç olarak bir yanıt 
+oluşturan bir metoddur.

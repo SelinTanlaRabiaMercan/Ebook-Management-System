@@ -20,7 +20,19 @@
 </head>
 <body>
 	<%@include file="adminAllComponent/navbar.jsp"%>
-	<%@include file="adminAllComponent/card.jsp"%>	
+	<%@include file="card.jsp"%>
+	<%
+	// Session'da saklanan kullanıcının adını alın
+	String email = (String) session.getAttribute("email");
+	
+	%>
+	<div>
+		<p>
+			Hoşgeldiniz,
+			<%=email%>!
+		</p>
+	</div>
+	
 	<%@include file="adminAllComponent/footer.jsp"%>
 </body>
 </html>

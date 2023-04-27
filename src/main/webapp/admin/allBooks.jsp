@@ -5,13 +5,11 @@
 <%@ page import="com.entity.Bookdtls"%>
 <%@ page import="java.util.List"%>
 
-
-
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>All Books</title>
 <%@include file="adminAllComponent/allCSS.jsp"%>
 
 </head>
@@ -39,28 +37,24 @@
 				List<Bookdtls> list = bookdtlsDALimpl.getAllBook();
 				for (Bookdtls b : list) {
 				%>
-				<td><%=b.getBookId()%></td>
-				<td><img src="../book/<%=b.getPhoto()%>" style="width: 50 px;height: 50px"></td>
-				<td><%=b.getBookname()%></td>
-				<td><%=b.getAuthor()%></td>
-				<td><%=b.getPrice()%></td>
-				<td><%=b.getBookCategory()%></td>
-				<td><%=b.getStatus()%></td>
-				<td>
-					<button type="button" class="btn btn-primary">Edit</button>
-					<button type="button" class="btn btn-danger">Delete</button>
-				</td>
-				
+				<tr>
+					<td><%=b.getBookId()%></td>
+			<td><img src="../book/<%=b.getPhoto()%>" style="height: 50px;"></td>
+					<td><%=b.getBookname()%></td>
+					<td><%=b.getAuthor()%></td>
+					<td><%=b.getPrice()%></td>
+					<td><%=b.getBookCategory()%></td>
+					<td><%=b.getStatus()%></td>
+					<td><a href="editBooks.jsp?id=<%=b.getBookId()%>"><button
+								type="button" class="btn btn-primary">Edit</button></a> <a
+						href="../delete?id=<%=b.getBookId()%>" class="btn btn-danger">Delete
+					</a></td>
+				</tr>
 				<%
 				}
 				%>
-
-
-
-
-
-
 			</tbody>
+
 		</table>
 	</div>
 	<%@include file="adminAllComponent/footer.jsp"%>

@@ -27,7 +27,7 @@
 </head>
 <body>
 	<%@include file="all_Component/navbar.jsp"%>
-	<div class="container-fluid back-clr">
+	<div class="container-fluid back-clr" style="height: 250px;">
 		<br>
 		<p>veritabanı bağlantısı:</p>
 		<%
@@ -37,14 +37,8 @@
 		<h2 class="text-center" style="color: white">E Book Management
 			System</h2>
 		<br>
-		<section id="RecentBook"></section>
-		<h4 class="text-center" style="color: white">Lorem ipsum dolor
-			sit amet consectetur adipisicing elit. Neque voluptas nostrum minus
-			ipsum fugit nemo perferendis aperiam ducimus, eligendi recusandae
-			illo velit omnis, ipsam quis et earum aspernatur inventore. Optio
-			soluta eveniet, dolorem ipsum alias repellendus, sit aspernatur
-			accusantium, obcaecati voluptas vel quas saepe ipsa ex recusandae
-			accusamus eos corporis</h4>
+		
+		
 
 
 	</div>

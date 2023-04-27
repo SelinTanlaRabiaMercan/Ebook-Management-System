@@ -46,16 +46,13 @@ public class BooksAddServlet extends HttpServlet {
 			HttpSession session = req.getSession();
 			if (f) {
 				//upload edilen dosyayı sunucudaki bir yere kaydetmek için kullanılır.dosya yoksa oluşturur
-				String path=getServletContext().getRealPath("")+"book";
+				//String path=getServletContext().getRealPath("")+"book";
+				//System.out.println(path);
+				String path = "C:\\Users\\rabia\\eclipse-workspace\\EBook_App\\src\\main\\webapp\\book";
 				File fl=new File(path);
-				part.write(path+File.separator+bookPhoto);
-				
-				
-				
-				session.setAttribute("successmesaj", "Kayıt başarılı.");
+				part.write(path+File.separator+bookPhoto);				
 				resp.sendRedirect("admin/addBooks.jsp");
 			} else {
-				session.setAttribute("failedmesaj", "Kayıt başarısız.");
 				resp.sendRedirect("admin/addBooks.jsp");
 			}
 
@@ -83,7 +80,7 @@ public class BooksAddServlet extends HttpServlet {
 
 		Exception e) {
 			e.printStackTrace();
-			System.out.println(e.getMessage());
+			System.out.println("BooksAddServlet sayfasında : "+e.getMessage());
 		}
 	}
 
