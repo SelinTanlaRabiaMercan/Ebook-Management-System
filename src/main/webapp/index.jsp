@@ -28,12 +28,21 @@
 <body>
 	<%@include file="all_Component/navbar.jsp"%>
 	<div class="container-fluid back-clr" style="height: 250px;">
-		<br>
-		<p>veritabanı bağlantısı:</p>
-		<%
+				<%
 		Connection conn = DBConnect.getConnection();
 		out.println(conn);
-		%>
+	
+	// Session'da saklanan kullanıcının adını alın
+	String email = (String) session.getAttribute("email");
+	
+	%>
+	<div >
+		<p>
+			Hoşgeldiniz,
+			<%=email%>!
+		</p>
+	</div>
+	
 		<h2 class="text-center" style="color: white">E Book Management
 			System</h2>
 		<br>

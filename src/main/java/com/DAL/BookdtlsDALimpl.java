@@ -196,32 +196,64 @@ public class BookdtlsDALimpl implements BookdtlsDAL {
 	}
 
 	@Override
-	public List<Bookdtls> getBooksByCategory(String category) {
-		List<Bookdtls> bookdtlstt = new ArrayList<Bookdtls>();
+	public List<Bookdtls> getbookCategory(String bookCategory) {
+		List<Bookdtls> list = new ArrayList<Bookdtls>();
 		Bookdtls b = null;
 		try {
-			String sql = "SELECT * FROM ebook.bookdtls WHERE bookCategory=?";
+			String sql = "select * from ebook.bookdtls where bookCategory=?";
 			PreparedStatement statement = conn.prepareStatement(sql);
-			statement.setString(1, category);
-			ResultSet resultSet = statement.executeQuery();
-			while (resultSet.next()) {
+			statement.setString(1, bookCategory);
+			System.out.println(" Bookdtls getBookcategory : category : " + bookCategory);
+			ResultSet set = statement.executeQuery();
+			while (set.next()) {
 				b = new Bookdtls();
-				b.setBookId(resultSet.getInt(1));
-				b.setBookname(resultSet.getString(2));
-				b.setAuthor(resultSet.getString(3));
-				b.setPrice(resultSet.getString(4));
-				b.setBookCategory(resultSet.getString(5));
-				b.setStatus(resultSet.getString(6));
-				b.setPhoto(resultSet.getString(7));
-				b.setUser_email(resultSet.getString(8));
+				b.setBookId(set.getInt(1));
+				b.setBookname(set.getString(2));
+				b.setAuthor(set.getString(3));
+				b.setPrice(set.getString(4));
+				b.setBookCategory(set.getString(5));
+				b.setStatus(set.getString(6));
+				b.setPhoto(set.getString(7));
+				b.setUser_email(set.getString(8));
+				list.add(b);
+			}
+		} catch (Exception e) {
+			System.out.println("BookdtlsDALimpl sayfasında getbookcatery metodunda ki hata : " + e.getMessage());
+			e.printStackTrace();
+		}
+		return list;
+	}
 
-				bookdtlstt.add(b);
+	@Override
+	public List<Bookdtls> getBookByIds(List<Integer> ids) {
+		List<Bookdtls> b = new ArrayList<Bookdtls>();
+		try {
+			String sql = "select * from ebook.bookdtls where bookId=?";
+			PreparedStatement statement = conn.prepareStatement(sql);
+			for (int id : ids) {
+
+				statement.setInt(1, id);
+				System.out.println(" Bookdtls getBookById : id : " + id);
+
+				ResultSet rs = statement.executeQuery();
+				while (rs.next()) {
+					Bookdtls b1 = new Bookdtls();
+					b1.setBookId(rs.getInt(1));
+					b1.setBookname(rs.getString(2));
+					b1.setAuthor(rs.getString(3));
+					b1.setPrice(rs.getString(4));
+					b1.setBookCategory(rs.getString(5));
+					b1.setStatus(rs.getString(6));
+					b1.setPhoto(rs.getString(7));
+					b1.setUser_email(rs.getString(8));
+					b.add(b1);
+				}
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
-			System.out.println("BooksdtlsDALimpl sayfasında getBooksByCategory metodunda : " + e.getMessage());
+			System.out.println("BooksdtlsDALimpl sayfasında getBookByIds metodunda : " + e.getMessage());
 		}
-		return bookdtlstt;
-	}
 
+		return b;
+	}
 }

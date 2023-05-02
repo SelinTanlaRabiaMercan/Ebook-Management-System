@@ -33,15 +33,29 @@
 		</select>
 
 	</div>
+	
 	<div class="navbar-right1">
-		<a class="navbar-link1" href="#hakkimizda">Hakkımızda</a> <a
-			class="navbar-link1" href="#">Ayarlar</a>
-		<form class="navbar-form1">
-			<input class="navbar-search1" type="text" placeholder="Search...">
-			<button class="navbar-search-btn2 navbar-button1" type="submit">Go</button>
-		</form>
+	<a class="navbar-link1" href="#hakkimizda">Hakkımızda</a> 
+	<a class="navbar-link1" href="Sepetim.jsp">Sepetim</a>
+	<form class="navbar-form1">
+		<input class="navbar-search1" type="text" placeholder="Search...">
+		<button class="navbar-search-btn2 navbar-button1" type="submit">Go</button>
+	</form>
+		<%
+		if (session.getAttribute("email") != null) {
+		%>
+		<a class="navbar-link1" href="Home.jsp">Kullanıcı Ayarları</a>
+		<%
+		} else if (session.getAttribute("email") == null) {
+		%>
 		<a class="navbar-link1" href="logIn.jsp">Giriş / Kayıt Ol</a>
+		<%
+		}
+		%>
 	</div>
+
+	
+
 </nav>
 
 
